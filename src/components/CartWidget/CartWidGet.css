@@ -1,0 +1,12 @@
+.cart{
+    background-color: rgb(44, 43, 43);
+    color: white;
+    width: 60px;
+    height: 40px;
+}
+
+.numberCart{
+    position: relative;
+    bottom: 8px;
+    font-weight: bold;
+}

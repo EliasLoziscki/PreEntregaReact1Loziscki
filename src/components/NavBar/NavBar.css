@@ -1,0 +1,15 @@
+
+
+h3{
+    color: white;
+    height: 35px;
+    text-align: center;
+}
+
+
+.nav-link{
+    background-color: rgb(44, 43, 43);
+    color: white;
+    width: 120px;
+    height: 40px;
+}
