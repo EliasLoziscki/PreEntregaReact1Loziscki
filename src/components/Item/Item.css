@@ -1,0 +1,11 @@
+.articleItemContainer{
+    border: 2px solid rgb(102, 104, 20);
+    box-shadow: 2px 5px 5px rgb(126, 39, 39);
+}
+.hItem{
+    height: 90px;
+}
+.imgItem{
+    height: 250px;
+    max-width: 100%;
+}

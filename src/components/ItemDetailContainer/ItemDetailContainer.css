@@ -1,4 +1,3 @@
-.ItemDetailContainer {
-    display: flex;
-    justify-content: center;
+.itemImg{
+    width: 300px;
 }

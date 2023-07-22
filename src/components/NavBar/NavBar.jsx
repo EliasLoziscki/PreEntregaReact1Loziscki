@@ -1,5 +1,6 @@
 import "./NavBar.css";
 import CartWidGet from "../CartWidget/CartWidGet";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -20,15 +21,28 @@ const NavBar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav d-flex justify-content-center align-items-center">
-              <button className="nav-link bg-dark" href="#">
-                Inicio
-              </button>
-              <button className="nav-link bg-dark" href="#">
-                Categorias
-              </button>
-              <button className="nav-link bg-dark" href="#">
-                Marcas
-              </button>
+            <ul className="navbar-nav justify-content-center align-items-center">
+                <li>
+                <Link className="nav-link bg-dark" to="/">
+                  Inicio
+                </Link>
+                </li>
+                <li>
+                <Link className="nav-link bg-dark" to="/category/celular">
+                  Celulares
+                </Link>
+                </li>
+                <li>
+                <Link className="nav-link bg-dark" to="/category/tablet">
+                  Tablets
+                </Link>
+                </li>
+                <li>
+                <Link className="nav-link bg-dark" to="/category/notbook">
+                  Notbook
+                </Link>
+                </li>
+              </ul>
             </div>
           </div>
           <div>
