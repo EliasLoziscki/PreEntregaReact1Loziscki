@@ -1,13 +1,18 @@
+import './CartWidGet.css'
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
+import cart from "../../assets/cart.png";
 
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import "./CartWidGet.css";
 
 const CartWidGet = () => {
+  const {totalQuantity} = useContext(CartContext)
+
   return (
-    <button className="cart">
-      <ShoppingCartOutlinedIcon />
-      <span className="numberCart">0</span>
-    </button>
+    <Link to='/cart' className='CartWidget' style={{display: totalQuantity > 0 ? 'block' : 'none'}} >
+      <img className='cart' src={cart} alt='cart-widget'/>
+    </Link>
+    
   );
 };
 

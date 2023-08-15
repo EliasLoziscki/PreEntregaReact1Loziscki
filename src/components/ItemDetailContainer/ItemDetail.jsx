@@ -1,8 +1,29 @@
 import './ItemDetailContainer.css'
 import ItemCount from '../ItemCount/ItemCount'
+import { CartContext } from '../../context/CartContext'
+import { useContext, useState } from 'react'
+
 
 const ItemDetail = ({id, name, img, category, description, price, stock}) => {
-  return (
+    function handleAddToCart () {
+        alert(`agregaste ${name} al carrito`)
+    }
+    
+    const [quantityAdded, setQuantityAdded] = useState (0)
+
+    const {addItem} = useContext(CartContext)
+
+    const handleOnAdd = (quantity) => {
+        setQuantityAdded(quantity)
+
+        const item = {
+            id, name, price
+        }
+
+        addItem(item, quantity)
+    }
+
+    return (
     <article className='cardItem container'>
         <header className='header'>
             <h2>
@@ -24,7 +45,7 @@ const ItemDetail = ({id, name, img, category, description, price, stock}) => {
             </p>
         </section>
         <footer className='itemFooter'>
-            <ItemCount initial={1} stock={10} onAdd={(quantify) => console.log('cantidad agregada ', quantify)} />
+            <ItemCount onAddToCart={handleAddToCart} initial={1} stock={10} onAdd={handleOnAdd} />
 
         </footer>
 

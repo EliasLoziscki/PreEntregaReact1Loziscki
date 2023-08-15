@@ -2,7 +2,7 @@ import './ItemCount.css'
 import { useState } from 'react'
 
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, initial, onAdd, onAddToCart}) => {
     const [quantify, setQuantify] = useState (initial)
 
     const increment = () => {
@@ -12,10 +12,18 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const decrement = () => {
-        if(quantify > !stock) {
-            setQuantify(quantify - 1)
+        if (quantify > 0) {
+            setQuantify(quantify - 1);
         }
-    }
+    };
+    
+
+    const handleAddToCart = () => {
+        if (stock > 0 && quantify > 0) {
+          onAdd(quantify);
+          onAddToCart();
+        }
+      };
 
     return(
             <div className='counter'>
@@ -25,7 +33,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                     <button className='button' onClick={increment}>+</button>
                 </div>
                 <div>
-                    <button className='button' onClick={() => onAdd(quantify)} disabled={!stock}>Agregar al carrito</button>
+                    <button className='button' onClick={handleAddToCart} disabled={!stock}>Agregar al carrito</button>
                 </div>
             </div>
     )

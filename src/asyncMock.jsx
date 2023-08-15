@@ -61,14 +61,23 @@ const products = [
         img: 'https://http2.mlstatic.com/D_NQ_NP_2X_933750-MLA45057868424_032021-F.webp',
         stock: 33,
         description: 'Ebook',
-    }
+    },
+    {
+        id: '8',
+        name: 'Notbook copada',
+        price: '1000',
+        category: 'notbook',
+        img: 'https://http2.mlstatic.com/D_NQ_NP_2X_933750-MLA45057868424_032021-F.webp',
+        stock: 33,
+        description: 'Ebook',
+    },
 ]
 
 export const getProducts = () => {
     return new Promise ((resolve) => {
         setTimeout(() => {
             resolve(products)
-        }, 1500)
+        }, 500)
     })
 }
 
@@ -76,7 +85,7 @@ export const getProductById = (productId) => {
     return new Promise ((resolve) => {
         setTimeout (() => {
             resolve(products.find(prod => prod.id === productId))
-        }, 1500)
+        }, 500)
     })
 }
 
@@ -84,6 +93,6 @@ export const getProductsByCategory = (productCategory) => {
     return new Promise ((resolve) => {
         setTimeout (() => {
             resolve(products.filter(prod => prod.category === productCategory))
-        }, 1500)
+        }, 500)
     })
 }
